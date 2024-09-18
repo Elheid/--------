@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet">
+  <!--<link href="css/outline.css" rel="stylesheet">
+    <link href="css/outline-settings.css" rel="stylesheet">-->
+  <title>Yacht club</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <a class="logo" href="#">
+      <img src="#" width='101px' heigh="41px" alt="Логотип">
+    </a>
+    <a href="tel:+73432908476">+7 666 666 66 66</a>
+    <a href="mailto:info@66bit.ru">info@.ru</a>
+    <div>
+      Слайдер темы
+    </div>
+    <nav class="main-header-nav">
+      <ul class="navigation">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index.html">Список сотрудников</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="search">
+      <h1>Список сотрудников</h1>
+      <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Поиск">
+        <button type="submit">Найти</button>
+      </form>
+
+
+      <div class="dropdown post">
+        <button onclick="myFunction()" class="dropbtn">Должность</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul class="dropdown=list posts">
+            <li><label><input type="checkbox" name="about"> Backend-разработчик</label></li>
+            <li><label><input type="checkbox" name="base"> Frontend-разработчик</label></li>
+            <li><label><input type="checkbox" name="blog"> Аналитик</label></li>
+            <li><label><input type="checkbox" name="contact"> Мененджер</label></li>
+            <li><label><input type="checkbox" name="support"> Дизайнер</label></li>
+            <li><label><input type="checkbox" name="tools"> Fullstack</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown sex">
+        <button onclick="myFunction()" class="dropbtn">Пол</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul class="dropdown=list sex">
+            <li><label><input type="checkbox" name="about"> Мужской</label></li>
+            <li><label><input type="checkbox" name="base"> Женский</label></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown stack">
+        <button onclick="myFunction()" class="dropbtn">Стек технологий</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ul>
+            <li><label><input type="checkbox" name="about"> CSharp</label></li>
+            <li><label><input type="checkbox" name="base"> React</label></li>
+            <li><label><input type="checkbox" name="blog"> Java</label></li>
+            <li><label><input type="checkbox" name="contact"> PHP</label></li>
+            <li><label><input type="checkbox" name="support"> Figma</label></li>
+            <li><label><input type="checkbox" name="tools"> Word </label></li>
+          </ul>
+        </div>
+      </div>
+      
+      <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+      </script>
+      <div>
+        Выбранные фильтры:
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ФИО</th>
+            <th>Должность</th>
+            <th>Телефон</th>
+            <th>Дата рождения</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Иванов Иван Иванович</td>
+            <td>Разработчик</td>
+            <td>+7 934 349-43-23</td>
+            <td>01.01.1980</td>
+          </tr>
+        </tbody>
+      </table>
+  </main>
+
+
+  <footer class="main-footer">
+  </footer>
+</body>
+
+</html>
